@@ -27,10 +27,10 @@ const TaskList = () => {
               checked={oneTask.isTaskDone}
               name={toDo.task}
               onChange={() => handleTaskDone(oneTask.id)}
-              className="w-4 h- cursor-pointer"
+              className="w-4 h-4 outline-none cursor-pointer"
             />
             <label
-              className={`text-2xl text-center text-gray-700 font-semibold ${
+              className={`text-3xl text-center text-white font-semibold ${
                 oneTask.isTaskDone && "line-through"
               }`}
               htmlFor="isTaskDone"
@@ -43,9 +43,9 @@ const TaskList = () => {
             <input
               type="text"
               value={editingValue}
-              className="text-xl font-semibold outline-none"
+              className="text-3xl font-semibold text-white bg-transparent outline-none"
               onChange={(event) => setEditingValue(event.target.value)}
-              onBlur={() =>
+              onMouseLeave={() =>
                 handleTaskUpdate({ taskName: editingValue }, oneTask.id)
               }
             />
@@ -69,7 +69,7 @@ const TaskList = () => {
       </div>
     ))
   ) : (
-    <h2 className="text-xl font-bold text-gray-400 pt-12">
+    <h2 className="text-4xl font-bold text-white pt-12">
       what your main focus today ?
     </h2>
   );
