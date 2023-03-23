@@ -12,7 +12,7 @@ export const ToDoProvider = ({ children }) => {
   };
 
   const handleTaskAdd = () => {
-    if (task !== "") {
+    if (task.trim() !== "") {
       const newTask = {
         id: nanoid(),
         taskName: task,

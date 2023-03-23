@@ -39,10 +39,11 @@ const TaskList = () => {
             </label>
           </div>
         ) : (
-          <div className="text-xl font-semibold w-full outline-none pl-8">
+          <div className="w-full pl-8">
             <input
               type="text"
               value={editingValue}
+              className="text-xl font-semibold outline-none"
               onChange={(event) => setEditingValue(event.target.value)}
               onBlur={() =>
                 handleTaskUpdate({ taskName: editingValue }, oneTask.id)
