@@ -2,13 +2,11 @@ import { useContext } from "react";
 import ToDoContext from "../context/ToDoContext";
 import { AiFillPlusCircle } from "react-icons/ai";
 const TaskInput = () => {
-  const { toDo, handleOnChange, task, handleTaskAdd } = useContext(ToDoContext);
-  console.log(toDo);
+  const { handleOnChange, task, handleTaskAdd } = useContext(ToDoContext);
   return (
     <div className="bg-teal-50 flex justify-between items-center space-x-3 px-4 w-[50%] rounded-full border shadow-3xl">
       <input
         type="text"
-        name="taskName"
         value={task}
         onChange={handleOnChange}
         placeholder=" Add todo..."

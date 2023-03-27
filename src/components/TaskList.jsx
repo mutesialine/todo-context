@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import ToDoContext from "../context/ToDoContext";
 const TaskList = () => {
@@ -15,17 +15,16 @@ const TaskList = () => {
     handleTaskEdit(task.id);
   };
   return toDo.length > 0 ? (
-    toDo.map((oneTask, index) => (
+    toDo.map((oneTask, id) => (
       <div
         className="flex justify-between items-center w-[50%] border-b-2 border-gray-300 pb-2"
-        key={index}
+        key={id}
       >
         {oneTask.isEdited === false ? (
           <div className="flex gap-x-5 items-center">
             <input
               type="checkbox"
               checked={oneTask.isTaskDone}
-              name={toDo.task}
               onChange={() => handleTaskDone(oneTask.id)}
               className="w-4 h-4 outline-none cursor-pointer"
             />
